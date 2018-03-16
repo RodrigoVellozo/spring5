@@ -21,8 +21,24 @@ public class User {
 	@Column(name="name")
 	private String name;
 	
+	@Column(name="email")
+	private String email;
+	
 	@ManyToMany
 	private Set<Role> roles;
+
+	
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public User(String name, String email) {
+		super();
+		this.name = name;
+		this.email = email;
+	}
 
 	//getters and setters
 	public Long getId() {
@@ -40,5 +56,14 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 
 }
